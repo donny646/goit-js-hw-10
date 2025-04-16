@@ -4,6 +4,18 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+const dateInput = document.querySelector('#datetime-picker');
+
+flatpickr(dateInput, {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    console.log(selectedDates[0]);
+  },
+});
+
 const dateSelector = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button[data-start]');
 const daysEl = document.querySelector('span[data-days]');
